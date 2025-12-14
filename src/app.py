@@ -14,7 +14,7 @@ def create_app():
         return jsonify({"status": "ok"})
 
     def serialize_song(doc):
-        """Mongo dökümanını JSON-friendly dict'e çevir."""
+        """MongoDB docs JSON-friendly convert."""
         return {
             "id": str(doc["_id"]),
             "artist": doc.get("artist"),
