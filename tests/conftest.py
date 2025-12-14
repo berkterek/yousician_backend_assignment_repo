@@ -7,11 +7,11 @@ import pytest
 from pymongo import MongoClient
 
 ROOT = Path(__file__).resolve().parents[1]
-SRC = ROOT / "src"
-if str(SRC) not in sys.path:
-    sys.path.insert(0, str(SRC))
 
-from app import create_app
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from src.app import create_app
 
 @pytest.fixture()
 def app(monkeypatch):
